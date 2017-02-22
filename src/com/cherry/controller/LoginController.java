@@ -10,6 +10,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.cherry.model.*;
+import com.cherry.pojo.Regist;
 
 @Path("log")
 public class LoginController
@@ -17,9 +18,11 @@ public class LoginController
 		static String name_1;
 		
 		@POST
-		@Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
-		public Response doPost(@FormParam("n1") String name,@FormParam("p1") String pass){
-		
+		@Consumes(MediaType.APPLICATION_JSON) 
+		public Response doPost(Regist regist)
+		{
+		   String name = regist.getUsername();
+		    String pass = regist.getPass();
 			System.out.println("inside login method");
 			Boolean loginStatus = Login.GetLogin(name,pass);
 			name_1=name;

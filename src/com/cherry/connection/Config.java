@@ -19,14 +19,6 @@ public class Config
 	
 	return session;
 
-	//Transaction transaction=session.beginTransaction();
-	//transaction.begin();
-
-//	Query query = session.createQuery("from student_table");
-//	java.util.List list = query.list();
-//	System.out.println(list);
-
-
 	}
 	
 }
